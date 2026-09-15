@@ -1,0 +1,306 @@
+/* =========================
+   ESTILOS GENERALES
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #1f2937;
+    background: #f5f7fa;
+}
+
+section {
+    padding: 70px 10%;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 35px;
+    color: #0b3d91;
+}
+
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+header {
+    background: #0b3d91;
+    padding: 20px 40px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav li {
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+nav li:hover {
+    color: #ffca28;
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+#hero {
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #0b3d91,
+        #1976d2
+    );
+
+    color: white;
+}
+
+#hero h1 {
+    max-width: 900px;
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+button {
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+
+    background: #ffca28;
+    color: #111827;
+
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ffd95a;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   NOSOTROS
+   ========================= */
+
+#nosotros {
+    background: white;
+    text-align: center;
+}
+
+#nosotros p {
+    max-width: 850px;
+    margin: 0 auto 25px;
+}
+
+#nosotros h3 {
+    color: #0b3d91;
+    margin-top: 25px;
+}
+
+
+/* =========================
+   ESTADÍSTICAS
+   ========================= */
+
+#estadisticas {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    flex-wrap: wrap;
+    text-align: center;
+    background: #eef4fb;
+}
+
+#estadisticas h2 {
+    width: 100%;
+}
+
+#estadisticas div {
+    background: white;
+    padding: 30px;
+    min-width: 180px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#estadisticas h3 {
+    font-size: 36px;
+    color: #0b3d91;
+}
+
+
+/* =========================
+   TARJETAS
+   ========================= */
+
+#carreras,
+#servicios,
+#noticias,
+#eventos {
+    background: white;
+}
+
+article {
+    background: #f8fafc;
+
+    padding: 25px;
+    margin: 15px auto;
+
+    max-width: 900px;
+
+    border-radius: 12px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+article h3 {
+    color: #0b3d91;
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   GALERÍA
+   ========================= */
+
+#galeria {
+    background: #eef4fb;
+    text-align: center;
+}
+
+
+/* =========================
+   CONTACTO
+   ========================= */
+
+#contacto {
+    background: white;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 14px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 16px;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid #1976d2;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    padding: 40px;
+
+    text-align: center;
+
+    background: #082b63;
+    color: white;
+}
+
+footer h3 {
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    section {
+        padding: 50px 5%;
+    }
+
+    #hero {
+        min-height: 450px;
+    }
+
+    #hero h1 {
+        font-size: 34px;
+    }
+
+    #hero p {
+        font-size: 18px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #estadisticas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #estadisticas div {
+        width: 100%;
+        max-width: 350px;
+    }
+}
