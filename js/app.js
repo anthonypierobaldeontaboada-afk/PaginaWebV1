@@ -1,7 +1,6 @@
 const componentes = {
     navbar: "navbar.html",
     banner: "banner.html",
-    hero: "hero.html",
     nosotros: "nosotros.html",
     estadisticas: "estadisticas.html",
     carreras: "carreras.html",
@@ -40,6 +39,32 @@ async function cargarComponentes() {
 
     // Iniciar el carrusel después de cargar los componentes
     iniciarCarrusel();
+    iniciarAnimacionProgramas();
+}
+
+function iniciarAnimacionProgramas() {
+    const programas = document.querySelectorAll(".banner-programa");
+
+    programas.forEach((programa) => {
+        let reinicio;
+
+        programa.addEventListener("mouseenter", () => {
+            clearTimeout(reinicio);
+            programa.classList.remove("is-reset");
+            programa.classList.remove("is-exiting");
+            programa.classList.add("is-visible");
+        });
+
+        programa.addEventListener("mouseleave", () => {
+            programa.classList.remove("is-visible");
+            programa.classList.add("is-exiting");
+
+            reinicio = setTimeout(() => {
+                programa.classList.remove("is-exiting");
+                programa.classList.add("is-reset");
+            }, 650);
+        });
+    });
 }
 
 

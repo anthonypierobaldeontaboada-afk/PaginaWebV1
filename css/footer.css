@@ -1,7 +1,7 @@
 .footer {
     background: #071d49;
     color: #ffffff;
-    padding-top: 60px;
+    padding-top: 70px;
 }
 
 .footer-container {
@@ -50,6 +50,12 @@
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     text-align: center;
     padding: 20px;
+}
+
+.footer-links a,
+.footer-contacto p,
+.footer-info p {
+    transition: color 0.2s ease;
 }
 
 .footer-bottom p {

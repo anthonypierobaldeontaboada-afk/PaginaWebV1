@@ -1,6 +1,6 @@
 .noticias {
-    padding: 90px 0;
-    background: #f7f9fc;
+    padding: 105px 0;
+    background: #f7faff;
 }
 
 .noticias-container {
@@ -17,14 +17,16 @@
 
 .noticia-card {
     background: #ffffff;
-    border-radius: 5px;
+    border: 1px solid #e4ebf4;
+    border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    transition: 0.3s;
+    box-shadow: 0 8px 24px rgba(7, 29, 73, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .noticia-card:hover {
     transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(7, 29, 73, 0.12);
 }
 
 .noticia-card img {
@@ -62,6 +64,10 @@
     color: #168cff;
     text-decoration: none;
     font-weight: 600;
+}
+
+.noticia-content a::after {
+    content: " →";
 }
 
 @media (max-width: 900px) {

@@ -1,5 +1,5 @@
 .contacto {
-    padding: 90px 0;
+    padding: 105px 0;
     background: #ffffff;
 }
 
@@ -47,9 +47,11 @@
 }
 
 .contacto-formulario {
-    background: #f7f9fc;
+    background: #f7faff;
     padding: 35px;
-    border-radius: 5px;
+    border: 1px solid #e4ebf4;
+    border-radius: 4px;
+    box-shadow: 0 12px 30px rgba(7, 29, 73, 0.06);
 }
 
 .contacto-formulario h3 {
