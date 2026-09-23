@@ -39,34 +39,52 @@ async function cargarComponentes() {
 
     // Iniciar el carrusel después de cargar los componentes
     iniciarCarrusel();
-    iniciarAnimacionProgramas();
+    iniciarNavegacion();
 }
 
-function iniciarAnimacionProgramas() {
-    const programas = document.querySelectorAll(".banner-programa");
+function iniciarNavegacion() {
+    const itemsConMenu = document.querySelectorAll(".nav-item:has(.dropdown)");
 
-    programas.forEach((programa) => {
-        let reinicio;
+    itemsConMenu.forEach((item) => {
+        const enlace = item.querySelector(":scope > a");
 
-        programa.addEventListener("mouseenter", () => {
-            clearTimeout(reinicio);
-            programa.classList.remove("is-reset");
-            programa.classList.remove("is-exiting");
-            programa.classList.add("is-visible");
+        if (!enlace) return;
+
+        enlace.setAttribute("aria-expanded", "false");
+
+        enlace.addEventListener("click", (evento) => {
+            evento.preventDefault();
+
+            const abierto = item.classList.toggle("is-open");
+            enlace.setAttribute("aria-expanded", String(abierto));
+
+            itemsConMenu.forEach((otroItem) => {
+                if (otroItem === item) return;
+
+                otroItem.classList.remove("is-open");
+                otroItem.querySelector(":scope > a")?.setAttribute("aria-expanded", "false");
+            });
         });
+    });
 
-        programa.addEventListener("mouseleave", () => {
-            programa.classList.remove("is-visible");
-            programa.classList.add("is-exiting");
+    document.addEventListener("click", (evento) => {
+        if (evento.target.closest(".nav-item:has(.dropdown)")) return;
 
-            reinicio = setTimeout(() => {
-                programa.classList.remove("is-exiting");
-                programa.classList.add("is-reset");
-            }, 650);
+        itemsConMenu.forEach((item) => {
+            item.classList.remove("is-open");
+            item.querySelector(":scope > a")?.setAttribute("aria-expanded", "false");
+        });
+    });
+
+    document.addEventListener("keydown", (evento) => {
+        if (evento.key !== "Escape") return;
+
+        itemsConMenu.forEach((item) => {
+            item.classList.remove("is-open");
+            item.querySelector(":scope > a")?.setAttribute("aria-expanded", "false");
         });
     });
 }
-
 
 /* =========================
    CARRUSEL DEL BANNER
@@ -76,6 +94,7 @@ function iniciarCarrusel() {
 
     const slides = document.querySelectorAll(".banner-slide");
     const dots = document.querySelectorAll(".banner-dot");
+    const banner = document.querySelector(".banner");
 
     const botonAnterior = document.getElementById("banner-prev");
     const botonSiguiente = document.getElementById("banner-next");
@@ -86,28 +105,40 @@ function iniciarCarrusel() {
     }
 
     let actual = 0;
+    let secuencia;
 
     function mostrarSlide(numero) {
 
-        slides.forEach((slide, index) => {
+        clearTimeout(secuencia);
 
+        slides.forEach((slide, index) => {
             slide.classList.toggle(
                 "active",
                 index === numero
             );
-
         });
 
         dots.forEach((dot, index) => {
-
             dot.classList.toggle(
                 "active",
                 index === numero
             );
-
         });
 
         actual = numero;
+
+        if (banner) {
+            banner.classList.remove("is-sequencing");
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    banner.classList.add("is-sequencing");
+                });
+            });
+        }
+
+        secuencia = window.setTimeout(() => {
+            banner?.classList.remove("is-sequencing");
+        }, 2600);
     }
 
 
