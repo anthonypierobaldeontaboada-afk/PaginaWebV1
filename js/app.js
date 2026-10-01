@@ -2,9 +2,11 @@ const componentes = {
     navbar: "navbar.html",
     banner: "banner.html",
     nosotros: "nosotros.html",
+    egresados: "egresados.html",
+    servicios: "servicios.html",
+    educacion: "educacion.html",
     estadisticas: "estadisticas.html",
     carreras: "carreras.html",
-    servicios: "servicios.html",
     noticias: "noticias.html",
     eventos: "eventos.html",
     galeria: "galeria.html",
@@ -40,6 +42,176 @@ async function cargarComponentes() {
     // Iniciar el carrusel después de cargar los componentes
     iniciarCarrusel();
     iniciarNavegacion();
+    iniciarResaltadoProgramas();
+    iniciarTabsEducacion();
+}
+
+function iniciarTabsEducacion() {
+    const tabs = [...document.querySelectorAll(".educacion-tab")];
+    if (tabs.length === 0) return;
+
+    const activarTab = (tab, moverFoco = false) => {
+        tabs.forEach((otroTab) => {
+            const activo = otroTab === tab;
+            otroTab.classList.toggle("is-active", activo);
+            otroTab.setAttribute("aria-selected", String(activo));
+            otroTab.tabIndex = activo ? 0 : -1;
+            document.getElementById(otroTab.getAttribute("aria-controls")).hidden = !activo;
+        });
+
+        if (moverFoco) tab.focus();
+    };
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => activarTab(tab));
+        tab.addEventListener("keydown", (evento) => {
+            let siguienteIndex = index;
+
+            if (evento.key === "ArrowRight") siguienteIndex = (index + 1) % tabs.length;
+            else if (evento.key === "ArrowLeft") siguienteIndex = (index - 1 + tabs.length) % tabs.length;
+            else if (evento.key === "Home") siguienteIndex = 0;
+            else if (evento.key === "End") siguienteIndex = tabs.length - 1;
+            else return;
+
+            evento.preventDefault();
+            activarTab(tabs[siguienteIndex], true);
+        });
+    });
+}
+
+function iniciarResaltadoProgramas() {
+    const contenedor = document.querySelector(".banner-programas");
+    if (!contenedor) return;
+
+    const programas = [...contenedor.querySelectorAll(".banner-programa")];
+    const espacioSvg = "http://www.w3.org/2000/svg";
+    const definiciones = document.createElementNS(espacioSvg, "svg");
+    const defs = document.createElementNS(espacioSvg, "defs");
+    const mascara = document.createElementNS(espacioSvg, "mask");
+    const idMascara = "banner-programas-highlight-mask";
+    definiciones.setAttribute("aria-hidden", "true");
+    definiciones.classList.add("banner-programas-mask-defs");
+    mascara.setAttribute("id", idMascara);
+    mascara.setAttribute("maskUnits", "userSpaceOnUse");
+    mascara.setAttribute("maskContentUnits", "userSpaceOnUse");
+    mascara.setAttribute("mask-type", "luminance");
+    defs.append(mascara);
+    definiciones.append(defs);
+
+    const recorte = document.createElement("span");
+    recorte.className = "banner-programas-highlight-clip";
+    const resaltado = document.createElement("span");
+    resaltado.className = "banner-programas-highlight";
+    resaltado.setAttribute("aria-hidden", "true");
+    recorte.append(resaltado);
+    contenedor.prepend(definiciones, recorte);
+
+    let programaActivo = null;
+    let temporizadorSalida;
+    let temporizadorReinicio;
+    let versionMovimiento = 0;
+    let ultimaPosicionX = null;
+
+    const posicionarResaltado = (programa) => {
+        resaltado.style.setProperty("--highlight-x", `${programa.offsetLeft}px`);
+        resaltado.style.setProperty("--highlight-y", `${programa.offsetTop}px`);
+        resaltado.style.width = `${programa.offsetWidth}px`;
+        resaltado.style.height = `${programa.offsetHeight}px`;
+    };
+
+    const actualizarGeometria = () => {
+        const ancho = contenedor.scrollWidth;
+        const alto = contenedor.scrollHeight;
+        recorte.style.width = `${ancho}px`;
+        recorte.style.height = `${alto}px`;
+        mascara.setAttribute("x", "0");
+        mascara.setAttribute("y", "0");
+        mascara.setAttribute("width", String(ancho));
+        mascara.setAttribute("height", String(alto));
+        mascara.replaceChildren(...programas.map((programa) => {
+            const rectangulo = document.createElementNS(espacioSvg, "rect");
+            rectangulo.setAttribute("x", String(programa.offsetLeft));
+            rectangulo.setAttribute("y", String(programa.offsetTop));
+            rectangulo.setAttribute("width", String(programa.offsetWidth));
+            rectangulo.setAttribute("height", String(programa.offsetHeight));
+            rectangulo.setAttribute("rx", "4");
+            rectangulo.setAttribute("fill", "white");
+            return rectangulo;
+        }));
+
+        if (programaActivo) {
+            posicionarResaltado(programaActivo);
+            ultimaPosicionX = programaActivo.offsetLeft;
+        }
+    };
+
+    const activar = (programa) => {
+        clearTimeout(temporizadorSalida);
+        clearTimeout(temporizadorReinicio);
+        actualizarGeometria();
+        const version = ++versionMovimiento;
+        const posicionX = programa.offsetLeft;
+        const reiniciarDesdeLaIzquierda = ultimaPosicionX !== null && posicionX < ultimaPosicionX;
+
+        programas.forEach((otroPrograma) => {
+            otroPrograma.classList.toggle("is-highlighted", otroPrograma === programa);
+        });
+        programaActivo = programa;
+        ultimaPosicionX = posicionX;
+
+        if (!reiniciarDesdeLaIzquierda) {
+            posicionarResaltado(programa);
+            resaltado.classList.add("is-visible");
+            return;
+        }
+
+        resaltado.classList.remove("is-visible");
+        temporizadorReinicio = window.setTimeout(() => {
+            if (version !== versionMovimiento || programaActivo !== programa) return;
+
+            resaltado.style.transition = "none";
+            posicionarResaltado(programas[0]);
+            void resaltado.offsetWidth;
+            resaltado.style.removeProperty("transition");
+
+            requestAnimationFrame(() => {
+                if (version !== versionMovimiento || programaActivo !== programa) return;
+                posicionarResaltado(programa);
+                resaltado.classList.add("is-visible");
+            });
+        }, 180);
+    };
+
+    const programarSalida = (programa) => {
+        if (programa.matches(":hover, :focus")) return;
+
+        temporizadorSalida = window.setTimeout(() => {
+            const siguientePrograma = programas.find((otroPrograma) => otroPrograma.matches(":hover, :focus"));
+            if (siguientePrograma) {
+                activar(siguientePrograma);
+                return;
+            }
+
+            clearTimeout(temporizadorReinicio);
+            versionMovimiento += 1;
+            programaActivo = null;
+            programas.forEach((otroPrograma) => otroPrograma.classList.remove("is-highlighted"));
+            resaltado.classList.remove("is-visible");
+        }, 70);
+    };
+
+    programas.forEach((programa) => {
+        programa.addEventListener("pointerenter", () => activar(programa));
+        programa.addEventListener("pointerleave", () => programarSalida(programa));
+        programa.addEventListener("focus", () => activar(programa));
+        programa.addEventListener("blur", () => programarSalida(programa));
+    });
+
+    window.addEventListener("resize", () => {
+        actualizarGeometria();
+        if (!programaActivo) ultimaPosicionX = null;
+    });
+    contenedor.addEventListener("scroll", actualizarGeometria, { passive: true });
 }
 
 function iniciarNavegacion() {

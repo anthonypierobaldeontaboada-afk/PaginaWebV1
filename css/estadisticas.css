@@ -1,0 +1,391 @@
+/* ================================
+   ESTADISTICAS — Fondo oscuro con gradiente
+   ================================ */
+
+.estadisticas {
+    position: relative;
+    padding: 90px 0;
+    background: linear-gradient(135deg, #071d49 0%, #0d1f6b 40%, #1a0a5c 100%);
+    overflow: hidden;
+}
+
+/* Formas decorativas */
+.estadisticas-bg-shapes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.estadisticas-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(113, 20, 239, 0.15);
+}
+
+.estadisticas-shape--1 {
+    width: 480px;
+    height: 480px;
+    top: -180px;
+    right: -120px;
+}
+
+.estadisticas-shape--2 {
+    width: 320px;
+    height: 320px;
+    bottom: -100px;
+    left: -80px;
+    background: rgba(20, 117, 247, 0.12);
+}
+
+.estadisticas-container {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.estadisticas-header {
+    text-align: center;
+    margin-bottom: 55px;
+    color: #ffffff;
+}
+
+.estadisticas-label {
+    display: inline-block;
+    color: #a78bfa;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.estadisticas-header h2 {
+    color: #ffffff;
+    font-size: clamp(26px, 3vw, 38px);
+    font-weight: 700;
+    margin: 0;
+}
+
+.estadisticas-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+}
+
+.estadistica-item {
+    text-align: center;
+    padding: 40px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.estadistica-item:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
+.estadistica-icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 18px;
+    display: grid;
+    place-items: center;
+    color: #a78bfa;
+}
+
+.estadistica-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.estadistica-number {
+    font-size: clamp(38px, 4vw, 52px);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2px;
+    background: linear-gradient(135deg, #c4b5fd, #93c5fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.estadistica-item p {
+    color: #c8d5e8;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.4;
+}
+
+@media (max-width: 1000px) {
+    .estadisticas-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .estadisticas {
+        padding: 65px 0;
+    }
+
+    .estadisticas-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .estadistica-item {
+        padding: 28px 14px;
+    }
+}
+
+.egresados {
+    position: relative;
+    padding-bottom: 88px;
+    background: #f7f9fc;
+}
+
+.egresados-hero {
+    min-height: 620px;
+    display: grid;
+    place-items: center;
+    padding: 48px 24px 132px;
+    background-image: linear-gradient(rgba(14, 20, 32, 0.48), rgba(14, 20, 32, 0.48)), url("/assets/images/egresados.jpg");
+    background-position: center 42%;
+    background-size: cover;
+}
+
+.egresados-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 640px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.egresados-play {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 38px;
+    border-radius: 50%;
+    color: #ffffff;
+    background: linear-gradient(135deg, #1475f7, #7114ef);
+    box-shadow: 0 0 0 12px rgba(113, 20, 239, 0.16);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.egresados-play:hover,
+.egresados-play:focus-visible {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 16px rgba(113, 20, 239, 0.2);
+}
+
+.egresados-play svg {
+    width: 25px;
+    height: 25px;
+    margin-left: 3px;
+}
+
+.egresados-copy h2 {
+    max-width: 610px;
+    margin: 0 0 18px;
+    color: #ffffff;
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.egresados-copy p {
+    max-width: 420px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.egresados-cta {
+    min-width: 150px;
+    min-height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 0 24px;
+    border-radius: 5px;
+    color: #ffffff;
+    background: linear-gradient(90deg, #2439ff, #9000ff);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.egresados-cta:hover,
+.egresados-cta:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(36, 57, 255, 0.3);
+}
+
+.egresados-stats {
+    position: relative;
+    z-index: 1;
+    width: min(1060px, calc(100% - 48px));
+    min-height: 170px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+    margin: -68px auto 0;
+    padding: 24px 10px;
+    border-radius: 6px;
+    background: #ffffff;
+    box-shadow: 0 16px 40px rgba(20, 35, 60, 0.12);
+}
+
+.egresados-stat {
+    position: relative;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px 20px;
+}
+
+.egresados-stat:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 12%;
+    right: 0;
+    width: 1px;
+    height: 76%;
+    background: #e1e5eb;
+}
+
+.egresados-stat-icon {
+    position: relative;
+    flex: 0 0 68px;
+    width: 68px;
+    height: 68px;
+    display: grid;
+    place-items: center;
+    color: #7114ef;
+    background: linear-gradient(135deg, #7114ef, #1475f7);
+    clip-path: polygon(50% 0, 96% 25%, 96% 75%, 50% 100%, 4% 75%, 4% 25%);
+}
+
+.egresados-stat-icon::before {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #ffffff;
+    clip-path: polygon(50% 0, 96% 25%, 96% 75%, 50% 100%, 4% 75%, 4% 25%);
+}
+
+.egresados-stat-icon svg {
+    position: relative;
+    z-index: 1;
+    width: 38px;
+    height: 38px;
+}
+
+.egresados-stat-copy {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.egresados-stat-copy strong {
+    color: #102744;
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.egresados-stat-copy span {
+    color: #667085;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+    .egresados-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 18px 10px;
+    }
+
+    .egresados-stat:nth-child(2)::after {
+        display: none;
+    }
+
+    .egresados-stat:nth-child(-n + 2) {
+        border-bottom: 1px solid #e1e5eb;
+    }
+}
+
+@media (max-width: 600px) {
+    .egresados {
+        padding-bottom: 56px;
+    }
+
+    .egresados-hero {
+        min-height: 560px;
+        padding: 48px 22px 100px;
+        background-position: 54% center;
+    }
+
+    .egresados-play {
+        margin-bottom: 30px;
+    }
+
+    .egresados-copy h2 {
+        font-size: 27px;
+    }
+
+    .egresados-copy p {
+        font-size: 14px;
+    }
+
+    .egresados-stats {
+        width: calc(100% - 30px);
+        margin-top: -54px;
+        padding: 12px 6px;
+    }
+
+    .egresados-stat {
+        gap: 10px;
+        padding: 16px 8px;
+    }
+
+    .egresados-stat-icon {
+        flex-basis: 48px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .egresados-stat-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .egresados-stat-copy strong {
+        font-size: 30px;
+    }
+
+    .egresados-stat-copy span {
+        font-size: 12px;
+    }
+}
