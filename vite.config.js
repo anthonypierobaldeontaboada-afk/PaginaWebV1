@@ -11,6 +11,7 @@ export default defineConfig({
         index: 'index.html',
         presentacion: 'presentacion.html',
         vision: 'vision.html',
+        organizacion: 'organizacion.html',
       },
     },
   },
