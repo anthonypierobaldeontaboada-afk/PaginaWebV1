@@ -1,0 +1,324 @@
+.vision-hero {
+    min-height: 270px;
+    display: grid;
+    place-items: center;
+    padding: 42px 24px;
+    color: #ffffff;
+    text-align: center;
+    background:
+        linear-gradient(rgba(9, 17, 33, 0.76), rgba(9, 17, 33, 0.76)),
+        url("/assets/images/egresados.jpg") center 43% / cover no-repeat;
+}
+
+.vision-hero h1 {
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-size: clamp(33px, 4vw, 45px);
+    line-height: 1.2;
+}
+
+.vision-breadcrumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.vision-breadcrumb a {
+    color: #ffffff;
+}
+
+.vision-breadcrumb span[aria-hidden="true"] {
+    color: #a78bfa;
+    font-size: 19px;
+}
+
+.vision-section {
+    min-height: 520px;
+    padding: 28px 24px 84px;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at -5% 70%, transparent 0 150px, rgba(113, 20, 239, 0.055) 151px 153px, transparent 154px 165px, rgba(20, 117, 247, 0.045) 166px 168px, transparent 169px),
+        #ffffff;
+}
+
+.vision-tabs {
+    width: min(950px, 100%);
+    min-height: 64px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 42px;
+    border-top: 1px solid #e5e8ee;
+    border-bottom: 1px solid #e5e8ee;
+}
+
+.vision-tab {
+    position: relative;
+    min-width: 150px;
+    padding: 17px 22px;
+    border: 0;
+    color: #596579;
+    background: transparent;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.vision-tab::after {
+    content: "";
+    position: absolute;
+    right: 22px;
+    bottom: -1px;
+    left: 22px;
+    height: 4px;
+    background: linear-gradient(90deg, #176df5, #252bc4);
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+
+.vision-tab:hover,
+.vision-tab.is-active {
+    color: #176df5;
+}
+
+.vision-tab.is-active::after {
+    transform: scaleX(1);
+}
+
+.vision-tab:focus-visible {
+    outline: 3px solid rgba(23, 109, 245, 0.28);
+    outline-offset: -4px;
+}
+
+.vision-panels {
+    width: min(950px, 100%);
+    margin: 0 auto;
+}
+
+.vision-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.03fr) minmax(0, 1fr);
+    gap: clamp(48px, 7vw, 92px);
+    align-items: center;
+    animation: vision-panel-appear 0.3s ease both;
+}
+
+.vision-panel[hidden] {
+    display: none;
+}
+
+@keyframes vision-panel-appear {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.vision-image-wrap {
+    position: relative;
+    z-index: 0;
+    padding: 34px 0 28px 36px;
+}
+
+.vision-image-wrap::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 78%;
+    height: 82%;
+    border-radius: 24px;
+    background: #f1f8fd;
+}
+
+.vision-image-wrap::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -28px;
+    right: -30px;
+    width: 112px;
+    height: 200px;
+    opacity: 0.75;
+    background-image: radial-gradient(#754cff 1.7px, transparent 1.8px);
+    background-size: 14px 14px;
+}
+
+.vision-image-wrap img {
+    width: 100%;
+    height: 300px;
+    border-radius: 18px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 18px 30px rgba(7, 29, 73, 0.22);
+}
+
+.vision-image-wrap--values img {
+    object-position: center 42%;
+}
+
+.vision-copy {
+    position: relative;
+    z-index: 1;
+    max-width: 440px;
+}
+
+.vision-copy-label {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: #176df5;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.vision-copy > p {
+    margin: 0 0 26px;
+    color: #667085;
+    font-size: 13px;
+    line-height: 1.85;
+    text-align: justify;
+}
+
+.vision-about-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 23px;
+    border-radius: 28px;
+    color: #ffffff;
+    background: linear-gradient(100deg, #7114ef, #1475f7);
+    box-shadow: 0 7px 14px rgba(69, 68, 222, 0.28);
+    font-size: 12px;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vision-about-link:hover,
+.vision-about-link:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(69, 68, 222, 0.34);
+}
+
+.vision-about-link span {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.vision-values-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 0 0 25px;
+    padding: 0;
+    list-style: none;
+}
+
+.vision-values-list li {
+    min-height: 58px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border: 1px solid #e8edf5;
+    border-radius: 7px;
+    color: #25324a;
+    background: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.vision-values-list li span {
+    color: #7114ef;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+@media (max-width: 760px) {
+    .vision-panel {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    .vision-image-wrap {
+        width: min(520px, 100%);
+        margin: auto;
+    }
+
+    .vision-copy {
+        max-width: 560px;
+        margin: auto;
+    }
+
+    .vision-section {
+        padding-bottom: 60px;
+    }
+}
+
+@media (max-width: 520px) {
+    .vision-hero {
+        min-height: 220px;
+    }
+
+    .vision-section {
+        padding: 20px 18px 52px;
+    }
+
+    .vision-tabs {
+        justify-content: flex-start;
+        margin-bottom: 30px;
+        overflow-x: auto;
+    }
+
+    .vision-tab {
+        min-width: max-content;
+        padding: 16px 14px;
+        font-size: 12px;
+    }
+
+    .vision-tab::after {
+        right: 14px;
+        left: 14px;
+    }
+
+    .vision-image-wrap {
+        padding: 25px 0 22px 22px;
+    }
+
+    .vision-image-wrap::after {
+        right: -5px;
+        width: 82px;
+        height: 150px;
+    }
+
+    .vision-image-wrap img {
+        height: 245px;
+        border-radius: 12px;
+    }
+
+    .vision-values-list {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .vision-panel {
+        animation: none;
+    }
+
+    .vision-tab::after,
+    .vision-about-link {
+        transition: none;
+    }
+}

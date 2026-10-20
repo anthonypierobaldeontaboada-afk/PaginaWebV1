@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conoce la misión, visión y valores institucionales del Instituto de Educación Superior Público Huanta.">
+    <title>Visión, Misión y Valores | IESTP Huanta</title>
+
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/vision.css">
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <main>
+        <section class="vision-hero" aria-labelledby="vision-page-title">
+            <div class="vision-hero-content">
+                <h1 id="vision-page-title">Visión, Misión y Valores</h1>
+                <nav class="vision-breadcrumb" aria-label="Ruta de navegación">
+                    <a href="/">Inicio</a>
+                    <span aria-hidden="true">»</span>
+                    <span aria-current="page">Visión, Misión y Valores</span>
+                </nav>
+            </div>
+        </section>
+
+        <section class="vision-section" aria-label="Principios institucionales">
+            <div class="vision-tabs" role="tablist" aria-label="Misión, visión y valores">
+                <button class="vision-tab is-active" id="tab-mision" type="button" role="tab" aria-selected="true" aria-controls="panel-mision" tabindex="0">Nuestra Misión</button>
+                <button class="vision-tab" id="tab-vision" type="button" role="tab" aria-selected="false" aria-controls="panel-vision" tabindex="-1">Nuestra Visión</button>
+                <button class="vision-tab" id="tab-valores" type="button" role="tab" aria-selected="false" aria-controls="panel-valores" tabindex="-1">Valores Institucionales</button>
+            </div>
+
+            <div class="vision-panels">
+                <article class="vision-panel is-active" id="panel-mision" role="tabpanel" aria-labelledby="tab-mision" tabindex="0">
+                    <div class="vision-image-wrap">
+                        <img src="/assets/images/egresados.jpg" alt="Egresados del Instituto de Educación Superior Público Huanta">
+                    </div>
+                    <div class="vision-copy">
+                        <span class="vision-copy-label">Misión</span>
+                        <p>
+                            Al 2031, somos un IES de excelencia, licenciada, que lidera en la formación integral de
+                            profesionales competitivos, innovadores; fomentamos el emprendimiento y la calidad en
+                            nuestros productos y servicios, reconocidos a nivel regional y nacional por formar
+                            profesionales comprometidos con la calidad y el cuidado del medio ambiente.
+                        </p>
+                        <a class="vision-about-link" href="/presentacion.html">Sobre Nosotros <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+
+                <article class="vision-panel" id="panel-vision" role="tabpanel" aria-labelledby="tab-vision" tabindex="0" hidden>
+                    <div class="vision-image-wrap">
+                        <img src="/assets/images/egresados.jpg" alt="Egresados del Instituto de Educación Superior Público Huanta">
+                    </div>
+                    <div class="vision-copy">
+                        <span class="vision-copy-label">Visión</span>
+                        <p>
+                            Al 2030, somos un IES que lidera en la formación integral de profesionales competitivos e
+                            innovadores; fomentamos el emprendimiento y la calidad en nuestros productos y servicios,
+                            con sentido de cuidado del medio ambiente y que aportan al desarrollo económico de la región.
+                        </p>
+                        <a class="vision-about-link" href="/presentacion.html">Sobre Nosotros <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+
+                <article class="vision-panel" id="panel-valores" role="tabpanel" aria-labelledby="tab-valores" tabindex="0" hidden>
+                    <div class="vision-image-wrap vision-image-wrap--values">
+                        <img src="/assets/images/egresados.jpg" alt="Comunidad educativa del Instituto Huanta celebrando sus logros">
+                    </div>
+                    <div class="vision-copy">
+                        <span class="vision-copy-label">Valores Institucionales</span>
+                        <p>Los valores que orientan nuestro trabajo y la formación de nuestra comunidad educativa son:</p>
+                        <ul class="vision-values-list">
+                            <li><span aria-hidden="true">01</span>Innovación</li>
+                            <li><span aria-hidden="true">02</span>Excelencia</li>
+                            <li><span aria-hidden="true">03</span>Compromiso Institucional</li>
+                            <li><span aria-hidden="true">04</span>Puntualidad</li>
+                        </ul>
+                        <a class="vision-about-link" href="/presentacion.html">Sobre Nosotros <span aria-hidden="true">→</span></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script type="module" src="./js/app.js"></script>
+    <script type="module" src="./js/vision.js"></script>
+</body>
+
+</html>
