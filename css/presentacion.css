@@ -1,0 +1,342 @@
+.presentacion-hero {
+    min-height: 268px;
+    display: grid;
+    place-items: center;
+    padding: 44px 24px;
+    color: #ffffff;
+    text-align: center;
+    background:
+        linear-gradient(rgba(9, 17, 33, 0.72), rgba(9, 17, 33, 0.72)),
+        url("/assets/images/egresados.jpg") center 42% / cover no-repeat;
+}
+
+.presentacion-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.presentacion-hero h1 {
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-size: clamp(34px, 4vw, 46px);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.presentacion-breadcrumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.presentacion-breadcrumb a {
+    color: #ffffff;
+}
+
+.presentacion-breadcrumb span[aria-hidden="true"] {
+    color: #a78bfa;
+    font-size: 19px;
+}
+
+.presentacion-seccion {
+    padding: 76px 24px 72px;
+    background: #ffffff;
+}
+
+.presentacion-grid {
+    width: min(950px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 0.93fr) minmax(0, 1.07fr);
+    gap: clamp(44px, 6vw, 78px);
+    align-items: start;
+}
+
+.presentacion-historia {
+    min-width: 0;
+}
+
+.presentacion-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 10px;
+    color: #176df5;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.presentacion-eyebrow span {
+    font-size: 23px;
+    line-height: 1;
+}
+
+.presentacion-historia h2 {
+    margin: 0 0 22px;
+    color: #101010;
+    font-size: clamp(29px, 3vw, 36px);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.13;
+}
+
+.presentacion-historia h2 strong {
+    color: #176df5;
+}
+
+.presentacion-historia > p,
+.presentacion-licenciamiento p {
+    color: #454545;
+    font-size: 14px;
+    line-height: 1.72;
+    text-align: justify;
+}
+
+.presentacion-historia > p {
+    margin: 0 0 14px;
+}
+
+.presentacion-historia .presentacion-lista-intro {
+    margin-top: 28px;
+    color: #6a6a6a;
+}
+
+.presentacion-programas {
+    margin: 0 0 26px;
+    padding-left: 19px;
+    color: #535353;
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.presentacion-institucion {
+    min-width: 0;
+    padding-top: 14px;
+}
+
+.presentacion-imagen-stage {
+    position: relative;
+    min-height: 420px;
+    display: grid;
+    place-items: center;
+    isolation: isolate;
+}
+
+.presentacion-anillo {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 50%;
+    width: min(390px, 100%);
+    aspect-ratio: 1;
+    border: 46px solid #1767f2;
+    border-radius: 50%;
+    transform: translateX(-42%);
+}
+
+.presentacion-fachada {
+    position: relative;
+    z-index: 1;
+    width: min(380px, 92%);
+    height: 270px;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 12px 28px rgba(7, 29, 73, 0.18);
+}
+
+.presentacion-antiguedad {
+    position: absolute;
+    z-index: 2;
+    top: 35px;
+    left: 0;
+    width: 136px;
+    min-height: 132px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 14px 18px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #176df5, #1529b6);
+    box-shadow: 0 10px 25px rgba(23, 70, 210, 0.2);
+}
+
+.presentacion-antiguedad strong {
+    font-size: 43px;
+    line-height: 1;
+}
+
+.presentacion-antiguedad span {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.presentacion-licencia {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    bottom: 16px;
+    width: min(350px, 94%);
+    min-height: 94px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border-radius: 20px 20px 0 0;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(12, 28, 57, 0.13);
+}
+
+.presentacion-medalla {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    place-items: center;
+    border: 2px solid #151515;
+    border-radius: 50%;
+    color: #151515;
+    font-size: 26px;
+}
+
+.presentacion-licencia strong,
+.presentacion-licencia small {
+    display: block;
+}
+
+.presentacion-licencia strong {
+    color: #111111;
+    font-size: 15px;
+}
+
+.presentacion-licencia small {
+    margin-top: 4px;
+    color: #7b7b7b;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.presentacion-video {
+    display: inline-flex;
+    align-items: center;
+    min-height: 54px;
+    margin: 0 0 0 28px;
+    color: #ffffff;
+    background: #1767f2;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.presentacion-video > span:first-child {
+    padding: 0 22px;
+}
+
+.presentacion-video-play {
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+    margin: -3px -1px -3px 0;
+    border-radius: 50%;
+    color: #111111;
+    background: #ffffff;
+    font-size: 17px;
+}
+
+.presentacion-licenciamiento {
+    margin-top: 16px;
+}
+
+.presentacion-licenciamiento p {
+    margin: 0 0 13px;
+    color: #666666;
+    font-size: 13px;
+}
+
+@media (max-width: 800px) {
+    .presentacion-grid {
+        max-width: 620px;
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .presentacion-institucion {
+        padding-top: 0;
+    }
+
+    .presentacion-imagen-stage {
+        min-height: 390px;
+    }
+
+    .presentacion-video {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 520px) {
+    .presentacion-hero {
+        min-height: 220px;
+    }
+
+    .presentacion-seccion {
+        padding: 48px 18px 54px;
+    }
+
+    .presentacion-historia > p,
+    .presentacion-programas {
+        font-size: 13px;
+    }
+
+    .presentacion-imagen-stage {
+        min-height: 310px;
+    }
+
+    .presentacion-anillo {
+        width: 300px;
+        max-width: 96%;
+        border-width: 34px;
+        transform: translateX(-44%);
+    }
+
+    .presentacion-fachada {
+        width: 90%;
+        height: 215px;
+    }
+
+    .presentacion-antiguedad {
+        top: 15px;
+        width: 112px;
+        min-height: 108px;
+        padding: 10px 13px;
+    }
+
+    .presentacion-antiguedad strong {
+        font-size: 36px;
+    }
+
+    .presentacion-antiguedad span {
+        font-size: 12px;
+    }
+
+    .presentacion-licencia {
+        bottom: 0;
+        width: 94%;
+        min-height: 78px;
+        gap: 11px;
+        padding: 12px;
+    }
+
+    .presentacion-medalla {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+    }
+
+    .presentacion-licencia strong {
+        font-size: 13px;
+    }
+}
