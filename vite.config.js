@@ -10,6 +10,10 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: 'index.html',
+        admision: 'admision.html',
+        matricula: 'matricula.html',
+        transparencia: 'transparencia.html',
+        tramites: 'tramites.html',
         presentacion: 'presentacion.html',
         vision: 'vision.html',
         organizacion: 'organizacion.html',

@@ -18,25 +18,26 @@
 
             <div class="contacto-dato">
                 <h3>Teléfono</h3>
-                <p>(066) 322296</p>
+                <p><a href="tel:+5166322296">(066) 322296</a></p>
             </div>
 
             <div class="contacto-dato">
                 <h3>Correo electrónico</h3>
-                <p>contactos@iestphuanta.edu.pe</p>
+                <p><a href="mailto:contactos@iestphuanta.edu.pe">contactos@iestphuanta.edu.pe</a></p>
             </div>
         </div>
 
         <div class="contacto-formulario">
             <h3>Envíanos un mensaje</h3>
 
-            <form>
-                <input type="text" placeholder="Nombre completo">
-                <input type="email" placeholder="Correo electrónico">
-                <input type="text" placeholder="Asunto">
-                <textarea placeholder="Escribe tu mensaje"></textarea>
+            <p>Al enviar, se abrirá tu aplicación de correo para que puedas revisar y enviar el mensaje.</p>
+            <form action="mailto:contactos@iestphuanta.edu.pe" method="post" enctype="text/plain">
+                <input type="text" name="Nombre" placeholder="Nombre completo" autocomplete="name" required>
+                <input type="email" name="Correo" placeholder="Correo electrónico" autocomplete="email" required>
+                <input type="text" name="Asunto" placeholder="Asunto" required>
+                <textarea name="Mensaje" placeholder="Escribe tu mensaje" required></textarea>
 
-                <button type="submit">Enviar mensaje</button>
+                <button type="submit">Preparar correo</button>
             </form>
         </div>
 

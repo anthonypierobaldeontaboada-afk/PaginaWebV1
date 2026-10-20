@@ -1,0 +1,145 @@
+.informacion-hero {
+    min-height: 230px;
+    display: grid;
+    place-items: center;
+    padding: 42px 20px;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(rgba(9, 17, 33, 0.78), rgba(9, 17, 33, 0.78)), url("../assets/images/egresados.jpg") center 42% / cover no-repeat;
+}
+
+.informacion-hero h1 {
+    margin: 0 0 10px;
+    color: #fff;
+    font-size: clamp(32px, 4vw, 46px);
+    line-height: 1.2;
+}
+
+.informacion-breadcrumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.informacion-breadcrumb a {
+    color: #fff;
+}
+
+.informacion-contenido {
+    width: min(1100px, 100% - 40px);
+    margin: 0 auto;
+    padding: 64px 0 72px;
+}
+
+.informacion-intro {
+    max-width: 760px;
+    margin: 0 auto 36px;
+    text-align: center;
+}
+
+.informacion-etiqueta {
+    margin: 0 0 8px;
+    color: #176df5;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.informacion-intro h2 {
+    margin: 0 0 14px;
+    color: #101010;
+    font-size: clamp(26px, 3vw, 36px);
+    line-height: 1.2;
+}
+
+.informacion-intro > p:not(.informacion-etiqueta),
+.informacion-aviso {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.informacion-boton {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 12px 20px;
+    border-radius: 6px;
+    color: #fff;
+    background: #1767f2;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.informacion-boton:hover {
+    background: #124fc2;
+}
+
+.informacion-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 18px;
+}
+
+.informacion-tarjeta {
+    padding: 24px;
+    border: 1px solid #e3e9f2;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(7, 29, 73, 0.06);
+}
+
+.informacion-tarjeta h3 {
+    margin: 0 0 10px;
+    color: #071d49;
+    font-size: 19px;
+}
+
+.informacion-tarjeta p,
+.informacion-tarjeta li {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.informacion-tarjeta ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.informacion-tarjeta a {
+    display: inline-block;
+    margin-top: 8px;
+    color: #1767f2;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.informacion-aviso {
+    margin: 24px auto 0;
+    padding: 14px 18px;
+    border-left: 4px solid #1767f2;
+    background: #f2f6ff;
+}
+
+@media (max-width: 600px) {
+    .informacion-hero {
+        min-height: 190px;
+    }
+
+    .informacion-contenido {
+        width: min(100% - 32px, 520px);
+        padding: 44px 0 52px;
+    }
+
+    .informacion-tarjeta {
+        padding: 20px;
+    }
+}

@@ -1,42 +1,78 @@
-const componentes = {
-    navbar: "navbar.html",
-    banner: "banner.html",
-    nosotros: "nosotros.html",
-    egresados: "egresados.html",
-    servicios: "servicios.html",
-    educacion: "educacion.html",
-    estadisticas: "estadisticas.html",
-    carreras: "carreras.html",
-    noticias: "noticias.html",
-    eventos: "eventos.html",
-    galeria: "galeria.html",
-    contacto: "contacto.html",
-    footer: "footer.html"
+import institucionImage from "../assets/images/image.png?url";
+import avanzaImage from "../assets/images/avanza.png?url";
+import carreraWebImage from "../assets/images/carrera-web.jpg?url";
+import egresadosImage from "../assets/images/egresados.jpg?url";
+import enfermeriaImage from "../assets/images/enfermeria.jpg?url";
+import heroImage from "../assets/images/hero.jpg?url";
+import heroLiveImage from "../assets/images/hero-live.jpg?url";
+import logoImage from "../assets/images/logo.png?url";
+import mecatronicaImage from "../assets/images/mecatronica.jpg?url";
+import mineduImage from "../assets/images/minedu.png?url";
+import registraImage from "../assets/images/registra.png?url";
+import titulaImage from "../assets/images/titula.png?url";
+
+import banner from "../components/banner.html?raw";
+import carreras from "../components/carreras.html?raw";
+import contacto from "../components/contacto.html?raw";
+import educacion from "../components/educacion.html?raw";
+import egresados from "../components/egresados.html?raw";
+import estadisticas from "../components/estadisticas.html?raw";
+import eventos from "../components/eventos.html?raw";
+import footer from "../components/footer.html?raw";
+import galeria from "../components/galeria.html?raw";
+import navbar from "../components/navbar.html?raw";
+import noticias from "../components/noticias.html?raw";
+import nosotros from "../components/nosotros.html?raw";
+import servicios from "../components/servicios.html?raw";
+
+const imagenesComponentes = {
+    "avanza.png": avanzaImage,
+    "carrera-web.jpg": carreraWebImage,
+    "egresados.jpg": egresadosImage,
+    "enfermeria.jpg": enfermeriaImage,
+    "hero.jpg": heroImage,
+    "hero-live.jpg": heroLiveImage,
+    "image.png": institucionImage,
+    "logo.png": logoImage,
+    "mecatronica.jpg": mecatronicaImage,
+    "minedu.png": mineduImage,
+    "registra.png": registraImage,
+    "titula.png": titulaImage
 };
 
-async function cargarComponentes() {
+function prepararComponente(html) {
+    return html.replace(/(["'])\.\/assets\/images\/([^"']+)\1/g, (referencia, comilla, nombre) => {
+        const url = imagenesComponentes[nombre];
+        if (!url) throw new Error(`No se encontró el recurso de imagen ${nombre}`);
+        return `${comilla}${url}${comilla}`;
+    });
+}
 
-    for (const [id, archivo] of Object.entries(componentes)) {
+const componentes = {
+    navbar: prepararComponente(navbar),
+    banner: prepararComponente(banner),
+    nosotros: prepararComponente(nosotros),
+    egresados: prepararComponente(egresados),
+    servicios: prepararComponente(servicios),
+    educacion: prepararComponente(educacion),
+    estadisticas: prepararComponente(estadisticas),
+    carreras: prepararComponente(carreras),
+    noticias: prepararComponente(noticias),
+    eventos: prepararComponente(eventos),
+    galeria: prepararComponente(galeria),
+    contacto: prepararComponente(contacto),
+    footer: prepararComponente(footer)
+};
+
+function cargarComponentes() {
+
+    for (const [id, contenido] of Object.entries(componentes)) {
 
         const contenedor = document.getElementById(id);
 
         if (!contenedor) continue;
 
-        try {
-
-            const respuesta = await fetch(`./components/${archivo}`);
-
-            if (!respuesta.ok) {
-                throw new Error(`No se pudo cargar ${archivo}`);
-            }
-
-            contenedor.innerHTML = await respuesta.text();
-
-        } catch (error) {
-
-            console.error(`Error cargando ${archivo}:`, error);
-
-        }
+        contenedor.innerHTML = contenido;
     }
 
     // Iniciar el carrusel después de cargar los componentes
