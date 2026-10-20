@@ -1,0 +1,304 @@
+.jerarquia-hero {
+    min-height: 266px;
+    display: grid;
+    place-items: center;
+    padding: 42px 24px;
+    color: #ffffff;
+    text-align: center;
+    background:
+        linear-gradient(rgba(9, 17, 33, 0.76), rgba(9, 17, 33, 0.76)),
+        url("/assets/images/egresados.jpg") center 43% / cover no-repeat;
+}
+
+.jerarquia-hero h1 {
+    margin: 0 0 8px;
+    color: #ffffff;
+    font-size: clamp(32px, 4vw, 44px);
+    line-height: 1.2;
+}
+
+.jerarquia-breadcrumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.jerarquia-breadcrumb a {
+    color: #ffffff;
+}
+
+.jerarquia-breadcrumb span[aria-hidden="true"] {
+    color: #a78bfa;
+    font-size: 19px;
+}
+
+.jerarquia-content {
+    width: min(950px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 22px 0 58px;
+}
+
+.jerarquia-intro {
+    margin: 0 10px 14px;
+    color: #5c5c5c;
+    font-size: 13px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.director-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.95fr);
+    gap: 36px;
+    align-items: center;
+    padding: 44px 24px 30px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 12px 40px rgba(17, 34, 68, 0.07);
+}
+
+.director-info {
+    min-width: 0;
+}
+
+.director-eyebrow {
+    margin: 0 0 8px;
+    color: #176df5;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.director-info h2 {
+    margin: 0;
+    color: #111111;
+    font-size: clamp(27px, 3vw, 34px);
+    line-height: 1.12;
+}
+
+.director-cargo {
+    margin: 8px 0 14px;
+    color: #176df5;
+    font-size: 13px;
+}
+
+.director-description {
+    margin: 0 0 20px;
+    color: #777777;
+    font-size: 13px;
+    line-height: 1.75;
+    text-align: justify;
+}
+
+.director-contact {
+    display: grid;
+    gap: 11px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.director-contact li {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: #4d4d4d;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.director-contact a {
+    color: inherit;
+}
+
+.director-contact a:hover {
+    color: #176df5;
+}
+
+.contact-symbol {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    color: #176df5;
+    background: #eaf1ff;
+    font-size: 16px;
+}
+
+.director-photo {
+    margin: 0;
+}
+
+.director-photo img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+.director-photo figcaption {
+    margin-top: 10px;
+    color: #176df5;
+    font-size: 12px;
+}
+
+.equipo-heading {
+    margin: 52px 0 22px;
+    text-align: center;
+}
+
+.equipo-heading > span {
+    color: #176df5;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.equipo-heading h2 {
+    margin: 5px 0 7px;
+    color: #101010;
+    font-size: clamp(24px, 3vw, 32px);
+}
+
+.equipo-heading p {
+    margin: 0;
+    color: #747b87;
+    font-size: 13px;
+}
+
+.equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.equipo-card {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px 23px;
+    border: 1px solid #edf0f5;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 7px 24px rgba(17, 34, 68, 0.045);
+}
+
+.equipo-area {
+    margin-bottom: 10px;
+    color: #176df5;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.045em;
+    text-transform: uppercase;
+}
+
+.equipo-card h3 {
+    margin: 0 0 6px;
+    color: #252b36;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.equipo-card p {
+    margin: 0 0 12px;
+    color: #666f7d;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.equipo-card a {
+    margin-top: 5px;
+    color: #596579;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.equipo-card a:hover {
+    color: #176df5;
+}
+
+.equipo-heading--programas {
+    margin-top: 58px;
+}
+
+.equipo-grid--programas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.jerarquia-note {
+    margin: 28px 4px 0;
+    color: #707782;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.jerarquia-note a {
+    color: #176df5;
+    text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+    .director-card {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 30px 22px;
+    }
+
+    .director-photo {
+        width: min(500px, 100%);
+    }
+
+    .director-photo img {
+        height: 360px;
+    }
+}
+
+@media (max-width: 520px) {
+    .jerarquia-hero {
+        min-height: 220px;
+    }
+
+    .jerarquia-content {
+        width: calc(100% - 28px);
+    }
+
+    .jerarquia-intro {
+        margin-right: 2px;
+        margin-left: 2px;
+        font-size: 12px;
+    }
+
+    .director-card {
+        padding: 24px 17px;
+    }
+
+    .director-info h2 {
+        font-size: 28px;
+    }
+
+    .director-photo img {
+        height: 300px;
+    }
+
+    .equipo-heading {
+        margin-top: 42px;
+    }
+
+    .equipo-grid,
+    .equipo-grid--programas {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .equipo-card {
+        padding: 19px;
+    }
+}

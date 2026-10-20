@@ -12,6 +12,7 @@ export default defineConfig({
         presentacion: 'presentacion.html',
         vision: 'vision.html',
         organizacion: 'organizacion.html',
+        planaJerarquica: 'plana-jerarquica.html',
       },
     },
   },
