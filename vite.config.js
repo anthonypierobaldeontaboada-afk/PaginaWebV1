@@ -18,6 +18,7 @@ export default defineConfig({
         vision: 'vision.html',
         organizacion: 'organizacion.html',
         planaJerarquica: 'plana-jerarquica.html',
+        planaDocente: 'plana-docente.html',
       },
     },
   },
